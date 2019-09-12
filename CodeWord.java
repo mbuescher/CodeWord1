@@ -3,7 +3,7 @@
  * Several Versions of writing a coded message using only arithmetic
  *
  * @author  APCS-A @ HB
- * @version 2018-09-14
+ * @version 2019-09-12
  */
 import java.util.Scanner;
 
