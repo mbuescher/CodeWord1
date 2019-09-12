@@ -20,7 +20,8 @@ public class CodeWord
      */
     public CodeWord (String str)
     {
-        original = str;
+        original = str;    // store the original word
+        toCode1();         // encode the word
     }
     
     /** Returns the original uncoded String
@@ -49,10 +50,24 @@ public class CodeWord
     public void toCode1()
     {
         String ans = "";
+        for (int i = 0; i < original.length(); i++)   // Go thru original letter by letter
+        {
+            ans += codeLetter(original.charAt(i));    // encode each letter; add it to the answer
+        }
         encoded = ans;
     }
     
+    /*  Encodes a single character into another character.
+     *  <b>Precondition:</b> The original character is an UPPERCASE letter
+     */
+    private char codeLetter(char c)
+    {
+        return c;
+    }
+    
+    //--------------------------------------------------------------------------------
     /*  main method to test the encoding program!  */
+    //--------------------------------------------------------------------------------
     public static void main(String[] args)
     {
         Scanner kbd = new Scanner (System.in);
@@ -60,7 +75,6 @@ public class CodeWord
         CodeWord myWord = new CodeWord(kbd.nextLine());
         
         System.out.println("Original word: " + myWord.getOriginal());
-        myWord.toCode1();
         System.out.println("Coded to:      " + myWord.getCoded());
     }
 }
